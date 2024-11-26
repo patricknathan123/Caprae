@@ -1,0 +1,22 @@
+This code creates an NDA for a list of
+companies that the user need to sign before seeing any
+other data from the company and keeps a log of who have
+signed which data and when
+
+how to operate:
+download NDA.py
+install the following packages:
+csv
+os
+flask
+datetime
+cohere
+reportlab.lib.pagesizes
+reportlab.pdfgen
+
+run NDA.py
+access web from http://127.0.0.1:5000
+pick a company to see
+sign the NDA
+
+Admin have access to logs
