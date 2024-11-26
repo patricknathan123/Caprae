@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discrepancy Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        .upload-form {
+            margin-bottom: 20px;
+        }
+        .upload-form input {
+            margin: 10px 0;
+        }
+        .upload-form button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .upload-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Discrepancy Checker</h1>
+    <form id="uploadForm" class="upload-form" enctype="multipart/form-data">
+        <input type="file" id="sellerFile" name="sellerFile" accept=".pdf" required><br>
+        <input type="file" id="buyerFile" name="buyerFile" accept=".pdf" required><br>
+        <button type="submit">Check Discrepancies</button>
+    </form>
+    <p id="message" style="color: green;"></p>
+</div>
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('sellerFile', document.getElementById('sellerFile').files[0]);
+        formData.append('buyerFile', document.getElementById('buyerFile').files[0]);
+
+        const response = await fetch('/upload', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (response.ok) {
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'discrepancy_report.pdf';
+            link.click();
+            URL.revokeObjectURL(url);
+            document.getElementById('message').innerText = "Discrepancy report generated!";
+        } else {
+            document.getElementById('message').innerText = "Error generating report. Please try again.";
+            document.getElementById('message').style.color = "red";
+        }
+    });
+</script>
+</body>
+</html>
+
