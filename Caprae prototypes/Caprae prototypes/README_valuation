@@ -1,0 +1,18 @@
+Valuation optimization calculator:
+gives a rough estimate on the valuation of a company when given
+the data inputted by the user and uses machine learning to give
+an estimated valuation of the company
+
+how to run:
+Download app.py, valuation_model.pkl.py, sample_company_data.csv,
+index_discrepancy.html(from templates)
+open app.py and download the following packages:
+-flask
+-numpy
+-pickle
+
+run app.py
+type in http://127.0.0.1:5000 on selected browser
+follow instruction on the ui screen
+press enter
+outputs valuation

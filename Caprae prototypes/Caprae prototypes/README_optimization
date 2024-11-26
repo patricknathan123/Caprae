@@ -1,0 +1,20 @@
+This codes uses machine learning and ai to find an optimized
+selling price for the seller from a given balance sheet(.csv)
+
+how to use:
+Download price optimization.py, upload_financial_data.html(from templates)
+install the following packages:
+os
+flask
+pandas
+cohere
+sklearn.ensemble
+numpy
+
+run price optimization.py
+type in http://127.0.0.1:5000 on selected browser
+upload the balance sheet .csv file
+press enter
+a valuation of the company will output
+
+

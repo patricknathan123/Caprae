@@ -1,0 +1,18 @@
+This code will output the discrepancy between documents that
+the user inputs. This could either be 2 seller/buyer documents
+or a seller and buyer agreement and it will print out a
+pdf with all the discrepancies
+
+how to run:
+download Cohere discprepancy checker.py, seller_buyer.html(from templates)
+download the following packages:
+-flask
+-PyPDF2
+-fpdf
+-cohere
+
+run Cohere discprepancy checker.py
+type in http://127.0.0.1:5000 on selected browser
+upload documents
+enter
+download the discrepancy.pdf
