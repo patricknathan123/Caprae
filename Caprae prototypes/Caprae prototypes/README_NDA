@@ -4,7 +4,7 @@ other data from the company and keeps a log of who have
 signed which data and when
 
 how to operate:
-download NDA.py
+download NDA.py, index_nda.html(from templates), nda.html(from templates), log.html(from templates)
 install the following packages:
 csv
 os
