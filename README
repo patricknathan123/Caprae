@@ -1,0 +1,9 @@
+A CIM Generator that input users documents of type;
+.txt, .csv, .docx, .pdf
+Uses Cohere as an AI agent to search through the web for the company.
+TO RUN:
+Run app.py
+Enter http://127.0.0.1:5000 on to your selected browser
+input documents and company name
+press Generate
+Download output
