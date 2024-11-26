@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose a Company</title>
+</head>
+<body>
+<h1>Select a Company to View and Sign the NDA</h1>
+<ul>
+  {% for company in companies %}
+  <li><a href="{{ url_for('show_nda', company=company) }}">{{ company }}</a></li>
+  {% endfor %}
+</ul>
+<hr>
+<a href="{{ url_for('view_log') }}">View Signed NDA Log (Admin)</a>
+</body>
+</html>
+
